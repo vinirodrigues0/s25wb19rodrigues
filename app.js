@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var gridRouter = require('./routes/grid');
 var indexRouter = require('./routes/index');
+var pickRouter = require('./routes/pick');
 var tournamentsRouter = require('./routes/tournaments');
 var usersRouter = require('./routes/users');
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/grid', gridRouter);
+app.use('/selector', pickRouter);
 app.use('/tournaments', tournamentsRouter);
 app.use('/users', usersRouter);
 
